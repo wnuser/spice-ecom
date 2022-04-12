@@ -27,7 +27,14 @@ include('includes/config.php');
         $insert_order  = mysqli_query($con,"INSERT INTO `orders_table`(`order_id`, `first_name`, `last_name`, `phone_num`, `cust_email`, `cust_country`, `cust_address`, `cust_town_city`, `postal_code`, `order_notes`, `customer_id`, `total_price`) 
                         VALUES ( '".$ord_inc_value."', '".$firstName."', '".$lastName."', '".$phoneNum."', '".$custEmail."', '".$custCountry."', '".$custAddress."', '".$custTowncity."', '".$postalCode."', '".$orderNotes."', '".$_SESSION['logged_id']."', '".$totalCart['total_cost']."' )" );
         $newOrderId = mysqli_insert_id($con);
-        
+
+        $_SESSION['order_id']         = $newOrderId;
+        $_SESSION['customer_name']    = $firstName;
+        $_SESSION['cutomer_phone']    = $phoneNum;
+        $_SESSION['cutomer_email']    = $custEmail;
+        $_SESSION['cutomer_address']  = $custAddress;
+        $_SESSION['total_amount']     = $totalCart['total_cost'];
+
         while($cartData = mysqli_fetch_assoc($getCartDataQry)) {
             if($cartData['reacipie_id']) {
                 $insert_order_products  = mysqli_query($con,"INSERT INTO `order_product`(`order_id`, `order_g_id`, `customer_id`, `reacipie_id`, `product_quantity`, `product_price`, `product_total`) 
@@ -42,7 +49,7 @@ include('includes/config.php');
 
         $deleteCartData    = mysqli_query($con,"DELETE FROM cart WHERE customer_id ='".$_SESSION['logged_id']."' ");
         if($deleteCartData){
-            echo "<script>alert('Your Order create successfully!.');location.href='index.php';</script>";
+            echo "<script>alert('Please proceed to pay!.');location.href='payment.php';</script>";
         }
 
 

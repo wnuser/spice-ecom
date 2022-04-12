@@ -296,6 +296,7 @@ include('includes/config.php');
                                                                 <th class="product-price">Order Date</th>
                                                                 <th class="product-price">Delivery Date</th>
                                                                 <th class="product-subtotal">Total</th>
+                                                                <th class="product-name">Payment Status</th>
                                                             </tr>
                                                         </thead>
                                                         <tbody>
@@ -314,6 +315,13 @@ include('includes/config.php');
                                                             <td class="product-name"><?php echo date('d-m-Y',strtotime($order_details_row['created_at'])); ?></td>
                                                              <td class="product-name"><?php echo  $order_details_row['delivered_date'] ? date('d-m-Y',strtotime($order_details_row['delivered_date'])) : "-" ; ?></td>
                                                             <td class="product-subtotal"><span>£ <?php echo $order_details_row['total_price']; ?></span></td>
+                                                            <td class="product-name">
+                                                                <?php  if($order_details_row['payment_status']) {
+                                                                  echo " <span style='color:green;'> Completed </span>";
+                                                                }else {
+                                                                  echo "<span style='color:red;'> Pending </span>"; 
+                                                                } ?>
+                                                            </td>
                                                         </tr>
                                                         <?php $i=$i+1;} ?>    
                                                         </tbody>

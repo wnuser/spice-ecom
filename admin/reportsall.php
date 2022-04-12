@@ -169,6 +169,7 @@
 												   <th>Customer Name</th>
 												   <th>Status</th>
 												   <th>Total Price</th>
+												   <th>Payment Status</th>
 												   <th class="text-right">Action</th>
 												</tr>
 											</thead>
@@ -243,6 +244,16 @@
 													    
 													</td>
 													<td><?php echo number_format($row['total_price'],2); ?></td>
+													<td> 
+
+													<?php  if($row['payment_status']) {
+                                                                  echo " <span style='color:green;'> Completed </span>";
+                                                                }else {
+                                                                  echo "<span style='color:red;'> Pending </span>"; 
+                                                                } ?>
+													
+													
+													 </td>
 													
 													
 													<td class="text-right">
