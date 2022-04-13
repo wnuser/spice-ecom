@@ -11,7 +11,7 @@ include('includes/config.php');
     <head>
         <meta charset="utf-8">
         <meta http-equiv="x-ua-compatible" content="ie=edge">
-        <title>Blend Ur Spice - Customize your Own Spice Mix</title>
+        <title>Eternal Seasoning - Customize your Own Spice Mix</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -98,7 +98,7 @@ include('includes/config.php');
                                             
                                         <?php
                                         $i=1;
-                                        $order_details=mysqli_query($con,"select * from reacipies where customer_id='".$_SESSION['logged_id']."' and is_active='1'");
+                                        $order_details=mysqli_query($con,"select * from reacipies where customer_id='".$_SESSION['logged_id']."' and is_active='1' ORDER BY id DESC");
                                         while($order_details_row=mysqli_fetch_array($order_details))
                                         {
                                         ?>    

@@ -55,7 +55,7 @@ if(isset($_POST['reset_password_update']))
     <head>
         <meta charset="utf-8">
         <meta http-equiv="x-ua-compatible" content="ie=edge">
-        <title>Blend Ur Spice - Password Reset</title>
+        <title>Eternal Seasoning - Password Reset</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 

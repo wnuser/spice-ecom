@@ -327,7 +327,7 @@ if(isset($_POST['customize_spice']))
 														<table width="100%" cellspacing="0" cellpadding="0" role="presentation" style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px">
 															<tr style="border-collapse:collapse">
 																<td align="left" style="padding:0;Margin:0;padding-left:20px;font-size:0px">
-																	<a target="_blank" href="https://czarmedias.com/BlendUrSpice/" style="-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;text-decoration:none;color:#659C35;font-size:16px"><img src="https://czarmedias.com/BlendUrSpice/admin/assets/img/profiles/16-09-2021-3251-blend-new-logo.png" alt="Blend Ur Spice" style="display:block;border:0;outline:none;text-decoration:none;-ms-interpolation-mode:bicubic" class="adapt-img" width="200" title="Blend Ur Spice" height="55"></a>
+																	<a target="_blank" href="https://czarmedias.com/BlendUrSpice/" style="-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;text-decoration:none;color:#659C35;font-size:16px"><img src="https://czarmedias.com/BlendUrSpice/admin/assets/img/profiles/16-09-2021-3251-blend-new-logo.png" alt="Eternal Seasoning" style="display:block;border:0;outline:none;text-decoration:none;-ms-interpolation-mode:bicubic" class="adapt-img" width="200" title="Eternal Seasoning" height="55"></a>
 																</td>
 															</tr>
 														</table>
@@ -602,11 +602,11 @@ if(isset($_POST['customize_spice']))
 	
     $mail->Subject = $subject;
    
-    $mail->SetFrom("blendurspice@gmail.com","Blend Ur Spice");
+    $mail->SetFrom("blendurspice@gmail.com","Eternal Seasoning");
 		
     $mail->From = "blendurspice@gmail.com";
    
-    $mail->FromName = "Blend Ur Spice";
+    $mail->FromName = "Eternal Seasoning";
     
     $mail->addAddress($cust_email_id,$first_name);
     

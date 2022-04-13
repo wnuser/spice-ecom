@@ -29,7 +29,7 @@ if(isset($_POST['delete_products'])) {
 	<head>
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
-		<title>Blend Ur Spice - View Seasoning Mix</title>
+		<title>Eternal Seasoning - View Seasoning Mix</title>
 		
 		<!-- Favicon -->
 		<!--<link rel="shortcut icon" href="assets/img/favicon.png">-->

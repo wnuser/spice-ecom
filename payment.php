@@ -14,7 +14,7 @@ if(!isset($_SESSION['order_id'])) {
     <head>
         <meta charset="utf-8">
         <meta http-equiv="x-ua-compatible" content="ie=edge">
-        <title>Blend Ur Spice - Checkout</title>
+        <title>Eternal Seasoning - Checkout</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -247,7 +247,7 @@ if(!isset($_SESSION['order_id'])) {
     });
   
     handler.open({
-      name: 'Blend Ur Spice',
+      name: 'Eternal Seasoning',
       description: 'Checkout',
       amount: amount * 100
     });

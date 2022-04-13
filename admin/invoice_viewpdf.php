@@ -9,7 +9,7 @@
     
     $pdf->SetCreator(PDF_CREATOR);
     $pdf->SetAuthor('');
-    $pdf->SetTitle('Blend Ur Spice - Invoice Order');
+    $pdf->SetTitle('Eternal Seasoning - Invoice Order');
     $pdf->SetSubject('Invoice Order');
     $pdf->SetKeywords('TCPDF, PDF');
     

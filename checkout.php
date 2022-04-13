@@ -60,7 +60,7 @@ if (isset($_POST['place_order'])) {
     <head>
         <meta charset="utf-8">
         <meta http-equiv="x-ua-compatible" content="ie=edge">
-        <title>Blend Ur Spice - Checkout</title>
+        <title>Eternal Seasoning - Checkout</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 

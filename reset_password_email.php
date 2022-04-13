@@ -417,7 +417,7 @@ if(isset($_POST['reset_password']))
                         														<table cellpadding="0" cellspacing="0" width="100%" role="presentation" style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px">
                         															<tr>
                         																<td align="center" style="padding:0;Margin:0;font-size:0px">
-                        																	<a target="_blank" href="https://czarmedias.com/BlendUrSpice/" style="-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;text-decoration:underline;color:#666666;font-size:14px"><img src="https://czarmedias.com/BlendUrSpice/admin/assets/img/profiles/16-09-2021-3251-blend-new-logo.png" alt="Blend ur Spice" style="display:block;border:0;outline:none;text-decoration:none;-ms-interpolation-mode:bicubic" title="Blend ur Spice" ></a>
+                        																	<a target="_blank" href="https://czarmedias.com/BlendUrSpice/" style="-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;text-decoration:underline;color:#666666;font-size:14px"><img src="https://czarmedias.com/BlendUrSpice/admin/assets/img/profiles/16-09-2021-3251-blend-new-logo.png" alt="Eternal Seasoning" style="display:block;border:0;outline:none;text-decoration:none;-ms-interpolation-mode:bicubic" title="Eternal Seasoning" ></a>
                         																</td>
                         															</tr>
                         														</table>
@@ -523,7 +523,7 @@ if(isset($_POST['reset_password']))
                         															</tr>
                         															<tr>
                         																<td align="center" style="padding:0;Margin:0;padding-bottom:35px">
-                        																	<p style="Margin:0;-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-family:arial, helvetica neue, helvetica, sans-serif;line-height:18px;color:#333333;font-size:12px">&nbsp;© 2022 Blend ur Spice. All Rights Reserved.</p>
+                        																	<p style="Margin:0;-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-family:arial, helvetica neue, helvetica, sans-serif;line-height:18px;color:#333333;font-size:12px">&nbsp;© 2022 Eternal Seasoning. All Rights Reserved.</p>
                         																</td>
                         															</tr>
                         														</table>
@@ -580,15 +580,15 @@ if(isset($_POST['reset_password']))
                         $mail->Password = 'p9eoURvC1jrJ';
                         $mail->SMTPAuth = true;
                     	 
-                        $subject="Blend Ur Spice - Password Reset";
+                        $subject="Eternal Seasoning - Password Reset";
                     	
                         $mail->Subject = $subject;
                        
-                        $mail->SetFrom("blendurspice@gmail.com","Blend Ur Spice");
+                        $mail->SetFrom("blendurspice@gmail.com","Eternal Seasoning");
                     		
                         $mail->From = "blendurspice@gmail.com";
                        
-                        $mail->FromName = "Blend Ur Spice";
+                        $mail->FromName = "Eternal Seasoning";
                         
                         $mail->addAddress($email_id);
                         

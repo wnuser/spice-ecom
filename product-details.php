@@ -9,7 +9,7 @@ include('includes/config.php');
     <head>
         <meta charset="utf-8">
         <meta http-equiv="x-ua-compatible" content="ie=edge">
-        <title>Blend Ur Spice - Product Details</title>
+        <title>Eternal Seasoning - Product Details</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 

@@ -50,9 +50,16 @@ if(isset($_POST['customize_spice']))
         $spices_details=mysqli_fetch_array(mysqli_query($con,"select * from spices_list where id='".$spices_ids[$i]."' and status='1' and is_active='1'"));
         
         $spices_image="admin/assets/img/spices/".$spices_details['spices_images'];
-                
+
         $insert_recipe_items=mysqli_query($con,"INSERT INTO reacipie_items (reacipie_id, product_id, product_name, product_img, quantity, product_price, spices_type, order_date) 
         VALUES ('".$recipe_id."', '".$spices_ids[$i]."', '".$spices_name[$i]."', '".$spices_image."', '".$prd_qty[$i]."', '".$spices_inv_total[$i]."', '".$spice_type."', '".date("Y-m-d")."')");
+
+        if($insert_recipe_items) {
+
+        }else {
+            die(mysqli_error($con));
+ 
+        }
        
     }
   
@@ -63,7 +70,7 @@ if(isset($_POST['customize_spice']))
      $inc_value=$ord_value_id['inc_num']+1;
      $update_gen_val= mysqli_query($con,"update generate_id set inc_num='".$inc_value."' WHERE id='1' and is_active='1'");    
 
-    echo "<script>alert('Your reacipies has been create successfully!.');location.href='customize_own_spice.php';</script>";
+    echo "<script>location.href='saved_recipe_items.php';</script>";
     
     } else {
         
@@ -91,7 +98,7 @@ if(isset($_REQUEST['delete']))
     <head>
         <meta charset="utf-8">
         <meta http-equiv="x-ua-compatible" content="ie=edge">
-        <title>Blend Ur Spice - Customize your Own Spice Mix</title>
+        <title>Eternal Seasoning - Customize your Own Spice Mix</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -180,7 +187,7 @@ if(isset($_REQUEST['delete']))
                     
                  <form method="post" autocomplete="off">  
                    
-                   <p style="color: #9f1d28;font-size: 17px;font-weight: 600;">* Minimum purchase order 250g</p>
+                   <p style="color: #9f1d28;font-size: 17px;font-weight: 600;">* Minimum purchase order 200g</p>
                     <div class="row justify-content-center">
                         <div class="col-xl-8">
                             <div class="cart-wrapper">
@@ -492,7 +499,7 @@ if(isset($_REQUEST['delete']))
                         return previousValue + currentValue;
                     });
                     
-                    if(total_qty >= 250) {
+                    if(total_qty >= 200) {
                     
                     $('#error_message').html("");
                         
@@ -508,7 +515,7 @@ if(isset($_REQUEST['delete']))
                         
                          $("#customize_spice").css("display", "none");
                        
-                         $('#error_message').html("Minimum purchase order 250g.");
+                         $('#error_message').html("Minimum purchase order 200g.");
                         
                     }
             }

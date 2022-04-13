@@ -48,7 +48,7 @@ if(isset($_POST['contact_us'])){
         $comments=$_POST['message']; 
         
       
-    $subject = "Blend Ur Spice - Contact Us";
+    $subject = "Eternal Seasoning - Contact Us";
     
     $message ='<div marginwidth="0" marginheight="0" style="font-family:Arial,sans-1;background:#fff">
     <table style="border-collapse: collapse;padding:10px 0 25px 0;border-radius:2px;margin:0 auto;background: rgba(0, 0, 0, 0.04) url(https://zulucare.com.sg/zulu/images/bg.jpg) top left repeat;" width="100%" cellspacing="0" cellpadding="0" border="0" bgcolor="#fff" align="center">
@@ -221,7 +221,7 @@ if(isset($_POST['contact_us'])){
     <head>
         <meta charset="utf-8">
         <meta http-equiv="x-ua-compatible" content="ie=edge">
-        <title>Blend Ur Spice - Contact Us</title>
+        <title>Eternal Seasoning - Contact Us</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
