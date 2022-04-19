@@ -2,7 +2,7 @@
 session_start();
 include 'Cart.php';
 $cart = new Cart;
-include('includes/config.php');
+include ('includes/config.php');
 ?>
 <!doctype html>
 <html class="no-js" lang="">
@@ -76,7 +76,7 @@ include('includes/config.php');
         <!-- Scroll-top-end-->
 
         <!-- header-area -->
-        <?php include('includes/header.php'); ?>
+        <?php include ('includes/header.php'); ?>
         <!-- header-area-end -->
 
 
@@ -107,14 +107,16 @@ include('includes/config.php');
                 <div class="container">
                     
                     <div class="row">
-                    <?php 
-                    $category_id=$_GET['category'];
-                    $delas=mysqli_query($con,"select * from our_products where prd_type='2' and status='1' and is_active='1'");
-                    $num_of_records=mysqli_num_rows($delas);
-                    if($num_of_records > 0)
-                    {
-                    while($delas_row=mysqli_fetch_array($delas))
-                    {
+                    <?php
+
+                    if(isset($_GET['category'])) {
+                        $category_id = $_GET['category'];
+                    }
+
+                    $delas = mysqli_query($con, "select * from our_products where prd_type='2' and status='1' and is_active='1'");
+                    $num_of_records = mysqli_num_rows($delas);
+                    if ($num_of_records > 0) {
+                        while ($delas_row = mysqli_fetch_array($delas)) {
                     ?>    
                     
                     
@@ -165,7 +167,9 @@ include('includes/config.php');
                                 </div>
                             </div>
                         </div>
-                    <?php } } else { ?>  
+                    <?php
+    }
+} else { ?>  
                     <div class="col-xl-12">
                      <div class="error-content text-center">
                         <div class="error_txt"><img src="img/products-not-found.png"></div>
@@ -174,7 +178,8 @@ include('includes/config.php');
                             <!--<a href="continental_cuisine.php" class="btn rounded-btn" style="margin-top:10px;">Back To Porridge</a>-->
                       </div>
                    </div> 
-                    <?php } ?>
+                    <?php
+} ?>
                     </div>
                 </div>
             </section>
@@ -185,7 +190,7 @@ include('includes/config.php');
 
 
         <!-- footer-area -->
-        <?php include('includes/footer.php'); ?>
+        <?php include ('includes/footer.php'); ?>
         <!-- footer-area-end -->
 
 		<!-- JS here -->

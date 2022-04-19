@@ -85,7 +85,9 @@ include('includes/config.php');
         <main>
         
         <?php 
-        $cousine_details=mysqli_fetch_array(mysqli_query($con,"select * from cusines where id='".$_GET['category']."' and status='1' and is_active='1'"));
+        if(isset($_GET['category'])) {
+            $cousine_details = mysqli_fetch_array(mysqli_query($con,"select * from cusines where id='".$_GET['category']."' and status='1' and is_active='1'"));
+        }
         ?> 
         
         <section class="breadcrumb-area breadcrumb-bg">

@@ -79,6 +79,7 @@
 							</div>
 							<?php 
 							$sales_total=mysqli_query($con,"SELECT * FROM orders where status='4' and is_active='1'");
+							$total = 0;
                             while($row_sales=mysqli_fetch_array($sales_total)){
                                 
                                 $total=$total+$row_sales['total_price'];
@@ -172,17 +173,20 @@
 										        <?php 
 										        
 									                $dateQuery='';
-									            
-        											if($_POST['from_date']!='' && $_POST['to_date']!='')
-                                            		{
+												
+													if(isset($_POST['from_date'])) {
+                                                        if($_POST['from_date']!='' && $_POST['to_date']!='')
+                                            		    {
                                             		    
-                                            		    $from_date=date('Y-m-d',strtotime($_POST['from_date']));
-                                            		    $to_date=date('Y-m-d',strtotime($_POST['to_date']));
-                                            		  
-                                            		    
-                                            			$dateQuery ="AND order_date BETWEEN '".$from_date."' AND '".$to_date."'";
+															$from_date=date('Y-m-d',strtotime($_POST['from_date']));
+															$to_date=date('Y-m-d',strtotime($_POST['to_date']));
+														
+															
+															$dateQuery ="AND order_date BETWEEN '".$from_date."' AND '".$to_date."'";
                                             			
-                                            		} 
+                                            	     	} 
+													}
+        											
                                             		
                                             	    $i=1;
                                             		$grand_total=0;
@@ -195,10 +199,11 @@
                                                     $customers_row=mysqli_fetch_array(mysqli_query($con,"select * from customers where id='".$row['customer_id']."' and is_active='1'"));
                         
                                                     $delivery_status_row=mysqli_fetch_array(mysqli_query($con,"select * from delivery_status where id='".$row['status']."' and is_active='1'"));
-                                                    
-                                                    $delivery_company=mysqli_fetch_array(mysqli_query($con,"select * from delivery_company where id='".$row['delivery_company']."' and is_active='1'"));
+													
+													if(isset($row['delivery_company'])) {
+														$delivery_company = mysqli_fetch_array(mysqli_query($con,"select * from delivery_company where id='".$row['delivery_company']."' and is_active='1'"));
+													}
 
-                                                    
                                         	    ?>
                                         	    
 												<tr>

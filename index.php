@@ -109,11 +109,11 @@ include('includes/config.php');
     <body>
 
         <!-- preloader -->
-        <div id="preloader">
+        <!-- <div id="preloader">
             <div id="loading-center">
                <img src="img/spinner.gif">
             </div>
-        </div>
+        </div> -->
         <!-- preloader-end -->
         
         <div class="prd-loader"></div>

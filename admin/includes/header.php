@@ -63,6 +63,7 @@
 						<ul>
 							<li><a class="<?= ($activePage == 'deals') ? 'active':''; ?>" href="deals.php">Add Product</a></li>
 							<li><a class="<?= ($activePage == 'view_deals' || $activePage == 'edit_deals') ? 'active':''; ?>" href="view_deals.php">Manage Products</a></li>
+							<li><a class="<?= ($activePage == 'manage_deal') ? 'active' : ''; ?>" href="manage_deal.php">Manage Deal</a></li>
 						</ul>
     			    </li>
 					
@@ -70,7 +71,12 @@
 					<li class="<?= ($activePage == 'spices') ? 'active':''; ?>">
 						<a href="spices.php"><i data-feather="file-text"></i> <span>Spices</span></a>
 					</li>
+
+					<li class="<?= ($activePage == 'manage_recipe') ? 'active':''; ?>">
+						<a href="manage_recipe.php"><i data-feather="file-text"></i> <span>Manage Recipes</span></a>
+					</li>
 					
+
 					<li class="submenu <?= ($activePage == 'cusines' || $activePage == 'products' ||$activePage == 'world_cuisines' || $activePage == 'view_world_cuisines' || $activePage == 'edit_world_cuisines') ? 'active':''; ?>">
 						<a href="#"><i data-feather="credit-card"></i> <span> World Cuisines</span> <span class="menu-arrow"></span></a>
 						<ul>

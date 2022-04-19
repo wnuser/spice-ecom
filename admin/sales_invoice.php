@@ -141,8 +141,10 @@
                         $customers_row=mysqli_fetch_array(mysqli_query($con,"select * from customers where id='".$row['customer_id']."' and is_active='1'"));
                         
                         $delivery_status_row=mysqli_fetch_array(mysqli_query($con,"select * from delivery_status where id='".$row['status']."' and is_active='1'"));
-                        
-                        $delivery_compnay=mysqli_fetch_array(mysqli_query($con,"select * from delivery_company where id='".$row['delivery_company']."' and is_active='1'"));
+						
+						if(isset($row['delivery_company'])) {
+							$delivery_compnay=mysqli_fetch_array(mysqli_query($con,"select * from delivery_company where id='".$row['delivery_company']."' and is_active='1'"));
+						}
                         
                     ?>
 					<div class="row">
@@ -270,11 +272,11 @@
 														        <th>Vat (20%)</th>
 														        <th>£<?php echo number_format($row['vat_amt'],2); ?></th>
 														    </tr>
-														    <tr>
+														    <!-- <tr>
 														        <th colspan="3"></th>
 														        <th>Shipping Amount (GBP)</th>
 														        <th>£<?php echo number_format($row['shipping_amont'],2); ?></th>
-														    </tr>
+														    </tr> -->
 														    <tr>
 														        <th colspan="3"></th>
 														        <th>Total (GBP)</th>
@@ -290,7 +292,7 @@
 									<br/>
 									
 									<!-- Invoice Refund --><br/>
-									<?php if($row['refund']=='1') { ?>
+									<?php if( isset($row['refund']) && $row['refund']=='1') { ?>
 									
     									<div class="col-lg-8">
     									    <div class="card">

@@ -37,9 +37,12 @@ if(isset($_POST['customize_spice']))
   
   $enquiry_details  = mysqli_fetch_array(mysqli_query($con,"select * from generate_id where id='1' and is_active='1'"));
   $ord_inc_value    = $enquiry_details['pref_name'].''.$enquiry_details['inc_num'];
+  
   $insert_recipes   = mysqli_query($con,"INSERT INTO reacipies (customer_id, subtotal, total_price, order_form, recipe_name, grinding_type, cust_own_desc, created, modified) 
    VALUES ('".$_SESSION['logged_id']."', '".$total_price."', '".$total_price."', '2', '".$recipe_name."', '".$grinding_type."', '".$cust_own_desc."', '".date("Y-m-d H:i:s")."', '".date("Y-m-d H:i:s")."')");
    $recipe_id = mysqli_insert_id($con);
+
+
    for($i=0;$i<count($spices_ids);$i++)
 	{
        
@@ -229,7 +232,7 @@ if(isset($_REQUEST['delete']))
                                                     <div class="shop-perched-info">
                                                         <div class="sd-cart-wrap">
                                                           <div class="cart-plus-minus">      
-                                                                <input type="text" class="qty" value="0" name="prd_qty[]" id="prd_qty1" onchange="update_quantity(1)"  required>
+                                                                <input type="text" class="qty" placeholder="0" name="prd_qty[]" id="prd_qty1" onchange="update_quantity(1)"  required>
                                                            </div>         
                                                         </div>
                                                         <p>Grams</p>
@@ -250,7 +253,7 @@ if(isset($_REQUEST['delete']))
                                                         </div>
                                                     </div> 
                                                </td>
-                                               <td>&nbsp;</td>
+                                               <td>Total Weight : <span id="total-weight">0</span> <span>Grams</span> </td>
                                                <td colspan="2">
                                                   <div class="shop-cart-bottom">
                                                         <div class="continue-shopping">
@@ -489,6 +492,19 @@ if(isset($_REQUEST['delete']))
                         }
                         
                     }
+
+                    var qtyarr = document.getElementsByClassName("qty");
+                    var totalWeight  = 0;
+                    for (var index = 0; index < qtyarr.length; index++) {
+                        if(qtyarr[index].value) {
+                            totalWeight += +qtyarr[index].value;
+                        }
+                    }
+
+                    $('#total-weight').empty();
+                    $('#total-weight').append(totalWeight);
+
+
                     
                     var list = document.getElementsByClassName("qty");
                     var values = [];

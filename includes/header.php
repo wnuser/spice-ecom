@@ -39,8 +39,8 @@ if(isset($_POST['subscribe'])) {
                 <div class="container custom-container">
                     <div class="row align-items-center">
                         <div class="col-xl-4 col-lg-5 d-none d-lg-block">
-                            <div class="logo">
-                                <a href="javascript:void(0)"><img src="admin/assets/img/profiles/<?php echo $profile_details['profile_img']; ?>" alt="Logo"></a>
+                            <div class="logo" style="width:200px;height:150px">
+                                <a href="javascript:void(0)"><img  style="width:200px;height:150px" src="admin/assets/img/profiles/<?php echo $profile_details['profile_img']; ?>" alt="Logo"></a>
                             </div>
                         </div>
                         <div class="col-xl-8 col-lg-7">
@@ -188,8 +188,16 @@ if(isset($_POST['subscribe'])) {
                                     </div>
                                     <div class="navbar-wrap main-menu d-none d-lg-flex">
                                         <ul class="navigation">
+                                        <li class="<?= ($activePage == 'index') ? 'active':''; ?>"><a href="index.php">Home</a></li>
+
+                    <?php 
+                            $dealsDetails  = mysqli_query($con, "SELECT * from manage_deal where id=1 ");
+                            $details       = mysqli_fetch_assoc($dealsDetails);
+                            $dealStatus    = $details['status'];
+                            if($dealStatus == 1) {
+                    ?>                    
                                             <li class="<?= ($activePage == 'index') ? 'active':''; ?>"><a href="index.php">Deals</a></li>
-                                           
+                            <?php  } else{}  ?>
                                             <?php if(isset($_SESSION['logged_id'])){ ?>
                                             
                                             <li class="<?= ($activePage == 'customize_own_spice') ? 'active':''; ?>"><a href="customize_own_spice.php">Customize your Own Spice Mix</a></li>
@@ -202,6 +210,7 @@ if(isset($_POST['subscribe'])) {
                                             
                                             <li class="<?= ($activePage == 'seasoning-mix') ? 'active':''; ?>"><a href="seasoning-mix.php">Porridge</a></li>
                                             <li class="<?= ($activePage == 'world-cusines') ? 'active':''; ?>"><a href="world-cusines.php">World Cusines</a></li>
+                                            <li class="<?= ($activePage == 'admin-recipe' ) ? 'active' : ''; ?>"> <a href="admin-recipe.php">Recipes</a> </li>
                                             
                                             
                                         </ul>

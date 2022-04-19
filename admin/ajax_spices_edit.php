@@ -6,10 +6,7 @@
         
     $output='';
     
-    // 	<div class="form-group">
-    // 				<label>Price <span class="text-danger">*</span></label>
-    // 				<input class="form-control" type="text" name="price" id="price" value="'.$ingredients_details['price'].'" required>
-    // 			</div>
+    
     
     $ingredients_details=mysqli_fetch_array(mysqli_query($con,"select * from spices_list where id='".$_POST['ing_id']."' and is_active='1'"));       
     
@@ -17,9 +14,13 @@
     		    
     			<div class="form-group">
     				<label>Spices Name <span class="text-danger">*</span></label>
-    				<input type="hidden" name="rec_id" id="rec_id" value="'.$ingredients_details['id'].'">
+					<input type="hidden" name="rec_id" id="rec_id" value="'.$ingredients_details['id'].'">
     				<input class="form-control" type="text" name="spices_name" id="spices_name" value="'.$ingredients_details['spices_name'].'" required>
-    			</div>
+				</div>
+				<div class="form-group">
+				<label>Price <span class="text-danger">*</span></label>
+				<input class="form-control" type="text" name="price" id="price" value="'.$ingredients_details['price'].'" required>
+			</div>
     			<div class="form-group">
 					<label>Spices Image <span class="text-danger">*</span></label>
 					<input class="form-control" type="file" name="spices_image" id="spices_image">

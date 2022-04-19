@@ -4,9 +4,9 @@
     
     if(isset($_POST['create-ingredients'])) {
       
-      $spices_name=mysqli_real_escape_string($con,$_POST['spices_name']);
-      $price=mysqli_real_escape_string($con,$_POST['price']);
-      $status=mysqli_real_escape_string($con,$_POST['status']);
+      $spices_name= mysqli_real_escape_string($con,$_POST['spices_name']);
+      $price      = mysqli_real_escape_string($con,$_POST['price']);
+      $status     = mysqli_real_escape_string($con,$_POST['status']);
       
       $spices_image=$_FILES['spices_image']['name'];
   
@@ -26,14 +26,16 @@
           
      } 
      
-      $spice_name_check=mysqli_num_rows(mysqli_query($con,"select * from spices_list where spices_name='".$spices_name."' and status='1' and is_active='1'"));
+      $spice_name_check = mysqli_num_rows(mysqli_query($con,"select * from spices_list where spices_name='".$spices_name."' and status='1' and is_active='1'"));
      
-         if($spice_name_check=='0')
+         if($spice_name_check == '0')
          {
             
               $insert_ingredients=mysqli_query($con,"INSERT INTO `spices_list` (`spices_name`, `spices_images`, `price`, `status`, `create_date`) 
               VALUES ('$spices_name', '$shortname', '$price', '$status', CURDATE())");     
-               
+			   
+			   
+			//    die(mysqli_error($con));
                if($insert_ingredients==true) 
                {
                    
@@ -54,15 +56,14 @@
     
     if(isset($_POST['edit-ingredients'])) {
       
-      $rec_id=$_POST['rec_id'];  
-      $spices_name=mysqli_real_escape_string($con,$_POST['spices_name']);
-      $price=mysqli_real_escape_string($con,$_POST['price']);
-      $status=mysqli_real_escape_string($con,$_POST['status']);
-      
-      $product_details=mysqli_fetch_array(mysqli_query($con,"select * from spices_list where id='".$rec_id."' and status='1' and is_active='1'"));
+      $rec_id      = $_POST['rec_id'];  
+      $spices_name = mysqli_real_escape_string($con,$_POST['spices_name']);
+	  $price       = mysqli_real_escape_string($con,$_POST['price']);
+	  
+      $status          = mysqli_real_escape_string($con,$_POST['status']);
+      $product_details = mysqli_fetch_array(mysqli_query($con,"select * from spices_list where id='".$rec_id."' and status='1' and is_active='1'"));
    
       $shortname='';
-   
       $spices_image=$_FILES['spices_image']['name'];
   
       if($spices_image!=''){
@@ -86,7 +87,8 @@
       }
         
       $update_category=mysqli_query($con,"update `spices_list` SET `spices_name`='".$spices_name."', `spices_images`='".$shortname."', `price`='".$price."', `status`='".$status."' where id='".$rec_id."' and is_active='1'");     
-       
+	   
+
        if($update_category==true) 
        {
            
@@ -278,10 +280,10 @@
 											<label>Spices Image <span class="text-danger">*</span></label>
 											<input class="form-control" type="file" name="spices_image" id="spices_image" required>
 										</div>
-										<!--<div class="form-group">-->
-										<!--	<label>Price <span class="text-danger">*</span></label>-->
-										<!--	<input class="form-control" type="text" name="price" id="price" required>-->
-										<!--</div>-->
+										<div class="form-group">
+											<label>Price <span class="text-danger">*</span></label>
+											<input class="form-control" type="text" name="price" id="price" required>
+										</div>
 										<div class="form-group">
 											<label>Status <span class="text-danger">*</span></label>
 											<select class="form-control" name="status" id="status" required>
